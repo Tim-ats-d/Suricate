@@ -1,6 +1,6 @@
 # Suricate
 
-> **Suricate** is a lightweight **logging library** inspired by Python [`logging`](https://docs.python.org/3/library/logging.html) library written in **Ocaml**.
+**Suricate** is a lightweight **logging library** inspired by Python [`logging`](https://docs.python.org/3/library/logging.html) library written in **Ocaml**.
 
 ## Installation
 
@@ -23,18 +23,24 @@ let formatter (log : Log.t) =
 
 module Stream_handler = (val Handler.Stream.create Debug ~formatter)
 
-module Logger =
+module Main_logger =
 (val Logger.create "main" Debug ~handlers:[ (module Stream_handler) ])
 
-let () = Logger.info "program was finished"
+let () = Main_logger.info "program is finished"
 ```
 
-## Running examples
+## Run examples
 
 ```
 dune build examples
 dune exec examples/main/main.exe
 dune exec examples/custom/custom.exe
+```
+
+## Build documentation
+
+```
+dune build @doc
 ```
 
 ## License

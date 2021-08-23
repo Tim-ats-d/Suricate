@@ -1,0 +1,4 @@
+(library
+ (name suricate)
+ (public_name suricate)
+ (libraries unix))

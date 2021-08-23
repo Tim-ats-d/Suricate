@@ -1,0 +1,3 @@
+(executable
+ (name custom)
+ (libraries suricate))

@@ -1,0 +1,22 @@
+opam-version: "2.0"
+synopsis: "Suricate it is a Python logging like library written in OCaml"
+maintainer: "tim.arnouts@protonmail.com"
+authors: [ "Tim-ats-d <tim.arnouts@protonmail.com>" ]
+
+build: [
+  [ "dune" "subst" ] {dev}
+  [ "dune" "build" "-p" name "-j" jobs ]
+  [ "dune" "build" "@doc" "-p" name ] {with-doc}
+  [ "dune" "install" "-p" name "--create-install-files" name ]
+]
+
+license: "GPL-3.0-or-later"
+tags: [ "log" "logs" "logging" ]
+homepage: "https://github.com/Tim-ats-d/Suricate"
+dev-repo: "git://github.com/Tim-ats-d/Suricate.git"
+bug-reports: "https://github.com/Tim-ats-d/Suricate/issues"
+
+depends: [
+  "dune" {>= "2.9"}
+  "odoc" {with-doc}
+]

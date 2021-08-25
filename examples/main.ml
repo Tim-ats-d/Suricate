@@ -10,7 +10,7 @@ let formatter (log : Log.t) =
   Printf.sprintf "%s :: %s :: %s" level date msg
 
 module File_handler =
-(val Handler.File.create Warning ~filename:"examples/main/logbook.log" ~formatter)
+(val Handler.File.create Warning ~filename:"examples/logbook.log" ~formatter)
 
 module Stream_handler = (val Handler.Stream.create Debug ~formatter)
 
